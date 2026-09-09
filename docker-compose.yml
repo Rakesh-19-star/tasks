@@ -1,0 +1,13 @@
+services:
+  tasks-api:
+    build: .
+    container_name: tasks-api
+    env_file:
+      - .env
+    ports:
+      - "5000:5000"
+    volumes:
+      - tasks-db:/app/database
+
+volumes:
+  tasks-db:

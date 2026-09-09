@@ -1,0 +1,88 @@
+GET http://localhost:5000/
+###
+
+POST  http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+    "name": "Admin User",
+    "email": "admin@gmail.com",
+    "password": "admin@123"
+}
+###
+
+POST  http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+   "email": "rakesh@gmail.com",
+    "password": "rakesh@123"
+}
+###
+
+GET http://localhost:5000/api/protected
+Authorization:Bearer eyJhbGci.........................................................................OiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoicmFrZXNoQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzg4NzYxNTIyLCJleHAiOjE3ODg3NjUxMjJ9.t37wMf5cd3TaleHwCeXbryNKvrFbK49UxnS5RTxwL9A
+###
+
+POST http://localhost:5000/api/tasks
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoicmFrZXNoQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzg4ODQ5Nzk2LCJleHAiOjE3ODg4NTMzOTZ9.n0gqzcGoMmVE47eigM0IZolTEwo__eM8OoN73U7o9e4
+
+{
+    
+    "title": "Learn node.js",
+    "description": "Complete Task Manager API"
+
+}
+
+###
+
+GET http://00000:5000/api/tasks
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoicmFrZXNoQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzg4ODQ5Nzk2LCJleHAiOjE3ODg4NTMzOTZ9.n0gqzcGoMmVE47eigM0IZolTEwo__eM8OoN73U7o9e4
+###
+
+GET http://localhost:5000/api/tasks/1
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoicmFrZXNoQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzg4NzYxNTIyLCJleHAiOjE3ODg3NjUxMjJ9.t37wMf5cd3TaleHwCeXbryNKvrFbK49UxnS5RTxwL9A
+###
+
+PUT http://localhost:5000/api/tasks/1
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoicmFrZXNoQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzg4NzYxNTIyLCJleHAiOjE3ODg3NjUxMjJ9.t37wMf5cd3TaleHwCeXbryNKvrFbK49UxnS5RTxwL9A
+Content-Type: application/json 
+
+{
+    "title": "Learn Node.js and Express",
+    "description": "Finish Task Manager project",
+    "status": "completed"
+} 
+###
+
+DELETE  http://localhost:3000/api/tasks/1
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoicmFrZXNoQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzg4Nzg0OTM4LCJleHAiOjE3ODg3ODg1Mzh9.GuowY35K-dPtsGmgSBGIPiv-cVmheskA5RTV2b34O7g
+### 
+
+PATCH http://localhost:3000/api/tasks/2/status
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImVtYWlsIjoicmFrZXNoQGdtYWlsLmNvbSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzg4Nzg0OTM4LCJleHAiOjE3ODg3ODg1Mzh9.GuowY35K-dPtsGmgSBGIPiv-cVmheskA5RTV2b34O7g
+
+{
+    "status": "completed"
+}
+###
+
+GET http://localhost:5000/api/admin/users/?search_q="Kiran Kumar"
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzg4NTI3OTAyLCJleHAiOjE3ODg1MzE1MDJ9.8hNZMDL--wwtkLRy0Jmy0GQoqm5XJ-zd2eTlMmuFjQg
+### 
+
+GET http://localhost:5000/api/admin/users/3/tasks
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzg4NTI2MTI4LCJleHAiOjE3ODg1Mjk3Mjh9.AsbsBDqO-xRq0WYsq1nrTlXceHh5rUTkPLCw9aW1fl8
+###
+
+DELETE  http://localhost:5000/api/admin/users/3
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzg4NTI2MTI4LCJleHAiOjE3ODg1Mjk3Mjh9.AsbsBDqO-xRq0WYsq1nrTlXceHh5rUTkPLCw9aW1fl8
+###
+
+DELETE http://localhost:5000/api/admin/tasks/5
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzg4NTI2MTI4LCJleHAiOjE3ODg1Mjk3Mjh9.AsbsBDqO-xRq0WYsq1nrTlXceHh5rUTkPLCw9aW1fl8
+###
+
+GET http://localhost:5000/api/admin/tasks?status=pending
+Authorization:Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjgsImVtYWlsIjoiYWRtaW5AZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzg4NTI5OTA4LCJleHAiOjE3ODg1MzM1MDh9.HPVvF_RM9tBD6Kr5NTPF0j5CAMSg8mPt_g5Ef3KHVbw
+##  
